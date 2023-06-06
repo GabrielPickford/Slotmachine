@@ -38,11 +38,22 @@ main{
     width: 100px;
     margin: 3px;
     border-radius: 3px;
-    background-color: orange;
+
+    font-size: 80px;
     position:relative;
 }
-/* .center2{
-    height: 100px;
-    width: 100px;
+.A1{
+    background-color: red;
+}
+.A2{
     background-color: orange;
-} */
+}
+.A3{
+    background-color:rgb(47, 0, 90);
+}
+.A4{
+    background-color: red;
+}
+.A5{
+    background-color: yellow;;
+}

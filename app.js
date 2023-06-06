@@ -1,37 +1,46 @@
 //const aviso = require("prompt-sync")();
-const boton = document.querySelector("button");
-const A = document.querySelectorAll(".A1, .A2, .A3, .A4, .A5");
-let index = 0;
-let count = 0;
+// Variables
+var spinButton = document.getElementById("button");
+var divA1 = document.querySelector(".A1");
+var divA2 = document.querySelector(".A2");
+var divA3 = document.querySelector(".A3");
+var divA4 = document.querySelector(".A4");
+var divA5 = document.querySelector(".A5");
+var colorsA1 = ["yellow", "red", "orange", "red", "red", "yellow", "red", "rgb(47, 0, 90)", "orange", "red"];
+var colorsA2 = ["red", "yellow", "red", "orange", "red", "red", "yellow", "red", "rgb(47, 0, 90)", "orange"];
+var colorsA3 = ["orange", "red", "yellow", "red", "orange", "red", "red", "yellow", "red", "rgb(47, 0, 90)"];
+var colorsA4 = ["rgb(47, 0, 90)", "orange", "red", "yellow", "red", "orange", "red", "red", "yellow", "red"];
+var colorsA5 = [ "red", "rgb(47, 0, 90)", "orange", "red","yellow", "red", "orange", "red", "red", "yellow"];
+var letterA1 = ["0","Q","@","oo","oo","O","Q","7","@","oo"]
+var letterA2 = ["oo","0","Q","@","oo","oo","O","Q","7","@"]
+var letterA3 = ["@","oo","0","Q","@","oo","oo","O","Q","7"]
+var letterA4 = ["7","@","oo","0","Q","@","oo","oo","O","Q"]
+var letterA5 = ["Q","7","@","oo","0","Q","@","oo","oo","O"]
+var currentIndex = 0;
 
-function spin() {
-  if (index < A.length) {
-    if ((count%2) === 0) {
-      A[index].style.backgroundColor = "red";
-    } 
-    else if ((count%2) !== 0) {
-      A[index].style.backgroundColor = "blue";
-    }
-    setTimeout(function() {
-      A[index].style.backgroundColor = "orange";
-      index++;
-      spin(); // Llama a la función spin nuevamente para el siguiente div
-    }, 100);
-    } 
-  else {
-    console.log(count)
-    count++;
-    if (count <= 5) {
-      index = 0;
-      spin();
-    }
+// Funciones
+function changeColor() {
+  divA1.style.backgroundColor = colorsA1[currentIndex];
+  divA1.innerHTML = letterA1[currentIndex];
+  divA2.style.backgroundColor = colorsA2[currentIndex];
+  divA2.innerHTML = letterA2[currentIndex];
+  divA3.style.backgroundColor = colorsA3[currentIndex];
+  divA3.innerHTML = letterA3[currentIndex];
+  divA4.style.backgroundColor = colorsA4[currentIndex];
+  divA4.innerHTML = letterA4[currentIndex];
+  divA5.style.backgroundColor = colorsA5[currentIndex];
+  divA5.innerHTML = letterA5[currentIndex];
+  currentIndex++;
+  if (currentIndex === colorsA1.length) {
+    currentIndex = 0;
   }
 }
 
-boton.addEventListener('click', function() {
-  index = 0;
-  count = 0;
-  spin();
+// Evento de clic para el botón "Spin"
+spinButton.addEventListener("click", function() {
+  for (var i = 0; i < 50; i++) {
+    setTimeout(changeColor, i * 300);
+  }
 });
 
 
