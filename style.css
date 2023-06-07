@@ -11,7 +11,6 @@ h1{
 }
 .boton{
     background-color: black;
-
 }
 .margen{
     height: 200px;
@@ -56,4 +55,38 @@ main{
 }
 .A5{
     background-color: yellow;;
+}
+
+
+.B1{
+    background-color: orange;
+}
+.B2{
+    background-color: yellow;
+}
+.B3{
+    background-color:rgb(47, 0, 90);
+}
+.B4{
+    background-color: red;
+}
+.B5{
+    background-color: orange;;
+}
+
+
+.C1{
+    background-color: yellow;
+}
+.C2{
+    background-color: red;
+}
+.C3{
+    background-color:rgb(47, 0, 90);
+}
+.C4{
+    background-color: red;
+}
+.C5{
+    background-color: orange;;
 }
